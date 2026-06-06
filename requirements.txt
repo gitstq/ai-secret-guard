@@ -1,0 +1,5 @@
+# AI Secret Guard - Core Dependencies
+# No external runtime dependencies required!
+# This tool uses only Python standard library for maximum portability.
+
+# Development dependencies (install with: pip install -r requirements-dev.txt)

@@ -1,0 +1,74 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ai-secret-guard"
+version = "1.0.0"
+description = "🔒 AI-Powered Secret Detection & Risk Assessment Tool"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [
+    {name = "AI Secret Guard Team", email = "contact@aisecretguard.dev"}
+]
+keywords = [
+    "security", "secret-detection", "api-key", "password", "scanner",
+    "code-security", "devsecops", "ai", "risk-assessment", "compliance"
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: System Administrators",
+    "Topic :: Security",
+    "Topic :: Software Development :: Quality Assurance",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Operating System :: OS Independent",
+]
+requires-python = ">=3.8"
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "pytest-cov>=4.0",
+    "black>=23.0",
+    "flake8>=6.0",
+    "mypy>=1.0",
+]
+
+[project.scripts]
+ai-secret-guard = "ai_secret_guard.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/gitstq/ai-secret-guard"
+Documentation = "https://github.com/gitstq/ai-secret-guard#readme"
+Repository = "https://github.com/gitstq/ai-secret-guard.git"
+Issues = "https://github.com/gitstq/ai-secret-guard/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+ai_secret_guard = ["py.typed"]
+
+[tool.black]
+line-length = 100
+target-version = ['py38']
+
+[tool.mypy]
+python_version = "3.8"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
